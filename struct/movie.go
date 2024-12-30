@@ -1,7 +1,7 @@
 package struct_movie
 
 type Movie struct {
-	TmdbId      int     `json:"tmbd_id" bson:"tmbd_id"`
+	TmdbId      *int    `json:"tmbd_id,omitempty" bson:"tmbd_id,omitempty"`
 	Title       string  `json:"title" bson:"title"`
 	Description string  `json:"description" bson:"description"`
 	Adult       bool    `json:"adult" bson:"adult"`

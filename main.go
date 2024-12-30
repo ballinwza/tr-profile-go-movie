@@ -15,6 +15,8 @@ func main() {
 	app.Get("/movies", handler_movie.SetupMovieService().GetAllMovieWithFilterHandler)
 	app.Get("movie/:id", handler_movie.SetupMovieService().GetMovieByIdHandler)
 	app.Post("/create/movie", handler_movie.SetupMovieService().CreateMovieHandler)
+	app.Put("/update/movie", handler_movie.SetupMovieService().UpdateMovieByIdHandler)
+	app.Delete("/delete/movie/:id", handler_movie.SetupMovieService().DeleteMovieByIdHandler)
 
 	fmt.Println("Server is running on port : ", port)
 	log.Fatal(app.Listen(":" + port))
